@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>True & Rainbow Kingdom Wallpapers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --hue-shift: 0deg;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      background-color: #0f172a;
+      color: #ffffff;
+    }
+
+    .font-display {
+      font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Dynamic shifting color aura & background canvas */
+    @keyframes rainbowCycle {
+      0% { filter: hue-rotate(0deg) saturate(1.18) brightness(0.96); }
+      50% { filter: hue-rotate(28deg) saturate(1.32) brightness(1.02); }
+      100% { filter: hue-rotate(0deg) saturate(1.18) brightness(0.96); }
+    }
+
+    .dynamic-bg-layer {
+      animation: rainbowCycle 16s ease-in-out infinite;
+      will-change: transform, filter;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Floating colorful orbs for vibrant dynamic ambiance */
+    @keyframes floatOrbA {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(45px, -35px) scale(1.12); }
+      66% { transform: translate(-30px, 30px) scale(0.94); }
+    }
+
+    @keyframes floatOrbB {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-55px, -40px) scale(1.16); }
+    }
+
+    @keyframes shimmerBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .orb-a {
+      animation: floatOrbA 12s ease-in-out infinite;
+    }
+
+    .orb-b {
+      animation: floatOrbB 15s ease-in-out infinite;
+    }
+
+    .rainbow-border {
+      background: linear-gradient(120deg, #ff4d8d, #ffbe0b, #00f5d4, #4cc9f0, #b5179e, #ff4d8d);
+      background-size: 300% 300%;
+      animation: shimmerBorder 6s ease infinite;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.56);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 24px 48px -12px rgba(255, 77, 141, 0.35), 0 12px 24px -8px rgba(76, 201, 240, 0.25);
+      border-color: rgba(255, 255, 255, 0.42);
+    }
+
+    .wallpaper-img {
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+    }
+
+    .glass-card:hover .wallpaper-img {
+      transform: scale(1.07);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.7);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #ff4d8d, #4cc9f0);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen relative selection:bg-pink-500 selection:text-white">
+  <!-- Floating Dynamic Color Orbs -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="orb-a absolute top-16 left-[8%] w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-pink-500/25 blur-3xl"></div>
+    <div class="orb-b absolute bottom-20 right-[10%] w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-cyan-400/25 blur-3xl"></div>
+    <div class="orb-a absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-amber-300/15 blur-3xl"></div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-16">
+    <!-- Hero Section -->
+    <section class="relative rounded-3xl glass-card p-6 sm:p-10 mb-8 overflow-hidden">
+      <div class="relative z-10 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs sm:text-sm font-semibold text-amber-200 mb-4">
+          <span>✨</span>
+          <span id="hero-pill">Tự động nhận diện ngôn ngữ thiết bị & nền động rực rỡ</span>
+        </div>
+
+        <h1 id="hero-title" class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 drop-shadow">
+          Hình Nền Vương Quốc Cầu Vồng Rực Rỡ
+        </h1>
+
+        <p id="hero-desc" class="text-sm sm:text-base lg:text-lg text-white/85 leading-relaxed mb-6">
+          Khám phá bộ sưu tập hình nền True và Bartleby đầy màu sắc. Nhấn tải xuống ngay lập tức để lưu ảnh sắc nét về thiết bị của bạn.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            id="hero-download-featured"
+            type="button"
+            class="px-5 py-3 rounded-2xl rainbow-border p-[2px] font-bold text-sm sm:text-base shadow-xl hover:scale-105 active:scale-95 transition cursor-pointer"
+          >
+            <span class="flex items-center gap-2 px-4 py-2 rounded-[14px] bg-slate-950/85 text-white">
+              <svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+              </svg>
+              <span id="hero-cta-text">Tải Hình Nền Chính</span>
+            </span>
+          </button>
+
+          <!-- Language Switcher Panel -->
+          <div
+            id="language-panel"
+            role="group"
+            aria-label="Language switcher"
+            class="inline-flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-slate-950/70 border border-white/20 backdrop-blur-md"
+          >
+            <button type="button" data-lang="vi" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">VI</button>
+            <button type="button" data-lang="en" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">EN</button>
+            <button type="button" data-lang="ja" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">日本語</button>
+            <button type="button" data-lang="ko" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">한국어</button>
+            <button type="button" data-lang="es" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">ES</button>
+            <button type="button" data-lang="fr" class="lang-btn px-3 py-1.5 rounded-xl text-xs sm:text-sm font-bold transition cursor-pointer">FR</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Preview & Download Modal -->
+  <div
+    id="preview-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-lg"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="relative w-full max-w-3xl glass-card rounded-3xl overflow-hidden shadow-2xl border border-white/25">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-white/15">
+        <div>
+          <h3 id="modal-title" class="font-display text-lg sm:text-xl font-bold text-white"></h3>
+          <p id="modal-meta" class="text-xs text-white/70"></p>
+        </div>
+        <button
+          id="modal-close"
+          type="button"
+          class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition cursor-pointer"
+          aria-label="Close"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-4 sm:p-6 bg-slate-950/40">
+        <div class="relative rounded-2xl overflow-hidden aspect-video bg-slate-900 border border-white/15">
+          <img
+            id="modal-image"
+            src=""
+            alt=""
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+          <button
+            id="modal-set-bg"
+            type="button"
+            class="px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/20 text-xs sm:text-sm font-semibold transition cursor-pointer"
+          >
+            ✨ <span id="modal-set-bg-label">Đặt làm nền website</span>
+          </button>
+        <div class="mt-5 flex flex-wrap items-center justify-end gap-3">
+          <button
+            id="modal-download"
+            type="button"
+            class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 via-amber-400 to-cyan-400 text-slate-950 font-extrabold text-xs sm:text-sm shadow-lg hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" />
+            </svg>
+            <span id="modal-download-label">Tải Xuống Ngay</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Banner (replaces alert) -->
+  <div
+    id="toast-banner"
+    class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none"
+  >
+    <div class="flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 border border-cyan-300/40 shadow-2xl text-xs sm:text-sm font-semibold text-white backdrop-blur-xl">
+      <span class="text-cyan-300">🌈</span>
+      <span id="toast-message"></span>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Translations for device auto-detection & manual switching.
+     * Supports Vietnamese (vi), English (en), Japanese (ja), Korean (ko), Spanish (es), French (fr).
+     */
+    const TRANSLATIONS = {
+      vi: {
+        brandTitle: "True & Rainbow Kingdom",
+        brandSubtitle: "Kho Hình Nền Sắc Màu",
+        dynamicColor: "Sắc Động",
+        heroPill: "Tự động nhận diện ngôn ngữ thiết bị & nền động rực rỡ",
+        heroTitle: "Hình Nền Vương Quốc Cầu Vồng Rực Rỡ",
+        heroDesc: "Bộ sưu tập hình nền True và Bartleby tươi sáng với hiệu ứng chuyển sắc mượt mà. Nhấn tải xuống ngay hoặc đổi ảnh nền toàn trang chỉ với một chạm.",
+        heroCta: "Tải Hình Nền Chính",
+        heroBgBtn: "🎨 Đổi Nền Sau Web",
+        searchPlaceholder: "Tìm kiếm hình nền...",
+        downloadBtn: "Tải Xuống",
+        previewBtn: "Xem",
+        downloadModal: "Tải Xuống Ngay",
+        emptyText: "Không tìm thấy hình nền nào khớp với từ khóa.",
+        toastDownloaded: "Đã tải xuống hình nền: ",
+        toastBgChanged: "Đã cập nhật ảnh nền website: ",
+        toastColorShift: "Đã chuyển dải sắc động mới!",
+        categories: {
+          all: "Tất Cả",
+          trueBartleby: "True & Bartleby",
+          rainbow: "Cầu Vồng",
+          wishes: "Điều Ước"
+        }
+      },
+      en: {
+        brandTitle: "True & Rainbow Kingdom",
+        brandSubtitle: "Vibrant Wallpaper Hub",
+        dynamicColor: "Dynamic Hue",
+        heroPill: "Auto-detected device language & smooth dynamic color backdrop",
+        heroTitle: "Rainbow Kingdom Wallpapers in Full Color",
+        heroDesc: "Explore bright True and Bartleby wallpapers with fluid color-shifting motion. Download in one tap or set any artwork as your live page background.",
+        heroCta: "Download Featured",
+        heroBgBtn: "🎨 Cycle Page Background",
+        searchPlaceholder: "Search wallpapers...",
+        downloadBtn: "Download",
+        previewBtn: "Preview",
+        downloadModal: "Download Wallpaper",
+        emptyText: "No wallpapers match your current filter.",
+        toastDownloaded: "Downloaded wallpaper: ",
+        toastBgChanged: "Updated page background to: ",
+        toastColorShift: "Shifted to a fresh dynamic color palette!",
+        categories: {
+          all: "All",
+          trueBartleby: "True & Bartleby",
+          rainbow: "Rainbow",
+          wishes: "Wishes"
+        }
+      },
+      ja: {
+        brandTitle: "トゥルーとレインボー王国",
+        brandSubtitle: "カラフル壁紙コレクション",
+        dynamicColor: "カラー演出",
+        heroPill: "端末言語を自動認識＆滑らかなカラーシフト背景",
+        heroTitle: "虹の王国の鮮やかな壁紙コレクション",
+        heroDesc: "トゥルーとバートレビィの明るい壁紙をワンタップでダウンロード。お気に入りの一枚をページの背景にも設定できます。",
+        heroCta: "メイン壁紙をダウンロード",
+        heroBgBtn: "🎨 背景画像を変更",
+        searchPlaceholder: "壁紙を検索...",
+        downloadBtn: "ダウンロード",
+        previewBtn: "表示",
+        downloadModal: "今すぐダウンロード",
+        emptyText: "条件に合う壁紙が見つかりませんでした。",
+        toastDownloaded: "ダウンロード完了: ",
+        toastBgChanged: "背景を変更しました: ",
+        toastColorShift: "新しいカラー演出に切り替えました！",
+        categories: {
+          all: "すべて",
+          trueBartleby: "トゥルー＆バートレビィ",
+          rainbow: "レインボー",
+          wishes: "ウィッシュ"
+        }
+      },
+      ko: {
+        brandTitle: "트루와 레인보우 왕국",
+        brandSubtitle: "컬러풀 배경화면 스튜디오",
+        dynamicColor: "다이나믹 컬러",
+        heroPill: "기기 언어 자동 감지 & 부드러운 색조 전환 배경",
+        heroTitle: "무지개 왕국의 생생한 배경화면",
+        heroDesc: "트루와 바틀비의 밝고 경쾌한 배경화면을 한 번의 탭으로 다운로드하거나 웹 배경화면으로 적용해 보세요.",
+        heroCta: "대표 배경화면 받기",
+        heroBgBtn: "🎨 웹 배경 변경",
+        searchPlaceholder: "배경화면 검색...",
+        downloadBtn: "다운로드",
+        previewBtn: "미리보기",
+        downloadModal: "지금 다운로드",
+        emptyText: "검색 조건에 맞는 배경화면이 없습니다.",
+        toastDownloaded: "다운로드됨: ",
+        toastBgChanged: "배경화면 변경됨: ",
+        toastColorShift: "새로운 다이나믹 색상이 적용되었습니다!",
+        categories: {
+          all: "전체",
+          trueBartleby: "트루 & 바틀비",
+          rainbow: "무지개",
+          wishes: "소원"
+        }
+      },
+      es: {
+        brandTitle: "True y el Reino Arcoíris",
+        brandSubtitle: "Fondos Llenos de Color",
+        dynamicColor: "Color Dinámico",
+        heroPill: "Idioma del dispositivo detectado y fondo de color dinámico",
+        heroTitle: "Fondos del Reino Arcoíris a Todo Color",
+        heroDesc: "Descubre fondos alegres de True y Bartleby con movimiento cromático suave. Descárgalos al instante o úsalos como fondo de la página.",
+        heroCta: "Descargar Destacado",
+        heroBgBtn: "🎨 Cambiar Fondo Web",
+        searchPlaceholder: "Buscar fondos...",
+        downloadBtn: "Descargar",
+        previewBtn: "Ver",
+        downloadModal: "Descargar Ahora",
+        emptyText: "No se encontraron fondos con ese filtro.",
+        toastDownloaded: "Fondo descargado: ",
+        toastBgChanged: "Fondo de página actualizado: ",
+        toastColorShift: "¡Nueva paleta dinámica activada!",
+        categories: {
+          all: "Todo",
+          trueBartleby: "True y Bartleby",
+          rainbow: "Arcoíris",
+          wishes: "Deseos"
+        }
+      },
+      fr: {
+        brandTitle: "True et le Royaume Arc-en-Ciel",
+        brandSubtitle: "Fonds d'Écran Hauts en Couleur",
+        dynamicColor: "Couleur Dynamique",
+        heroPill: "Langue détectée automatiquement et fond chromatique fluide",
+        heroTitle: "Fonds d'Écran du Royaume Arc-en-Ciel",
+        heroDesc: "Parcourez des fonds d'écran lumineux de True et Bartleby avec effets de couleurs fluides. Téléchargez-les ou définissez-les en arrière-plan.",
+        heroCta: "Télécharger l'Affiche",
+        heroBgBtn: "🎨 Changer le Fond",
+        searchPlaceholder: "Rechercher un fond...",
+        downloadBtn: "Télécharger",
+        previewBtn: "Aperçu",
+        downloadModal: "Télécharger",
+        emptyText: "Aucun fond d'écran trouvé.",
+        toastDownloaded: "Téléchargé : ",
+        toastBgChanged: "Arrière-plan mis à jour : ",
+        toastColorShift: "Nouvelle palette dynamique activée !",
+        categories: {
+          all: "Tout",
+          trueBartleby: "True & Bartleby",
+          rainbow: "Arc-en-Ciel",
+          wishes: "Vœux"
+        }
+      }
+    };
+
+    /**
+     * Wallpaper catalog. The first item uses the attached uploaded artwork
+     * and generates a high-resolution downloadable PNG via HTML5 Canvas with fallback support.
+     */
+    const WALLPAPERS = [
+      {
+        id: "true-bartleby-path",
+        title: {
+          vi: "True & Bartleby Trên Lối Mỏi Cầu Vồng",
+          en: "True & Bartleby on the Rainbow Path",
+          ja: "虹の道のトゥルーとバートレビィ",
+          ko: "무지개 길 위의 트루와 바틀비",
+          es: "True y Bartleby en el Sendero Arcoíris",
+          fr: "True & Bartleby sur le Chemin Arc-en-Ciel"
+        },
+        category: "trueBartleby",
+        resolution: "1920 × 1080 • HD",
+        accent: ["#FF4D8D", "#4CC9F0", "#FFBE0B"],
+        // Uses user-provided image when available; canvas fallback ensures offline/sandbox reliability
+        imageUrl: "Gemini_Generated_Image_neqrccneqrccneqr.png",
+        fallbackUrl: "https://placehold.co/1920x1080/38bdf8/ffffff?text=True+%26+Bartleby+Rainbow+Kingdom"
+      },
+      {
+        id: "rainbow-meadow-sky",
+        title: {
+          vi: "Thảo Nguyên Cầu Vồng & Mây Trắng",
+          en: "Rainbow Meadow & Fluffy Clouds",
+          ja: "虹の草原とふわふわの雲",
+          ko: "무지개 초원과 푹신한 구름",
+          es: "Pradera Arcoíris y Nubes Suaves",
+          fr: "Prairie Arc-en-Ciel & Nuages Doux"
+        },
+        category: "rainbow",
+        resolution: "2560 × 1440 • 2K",
+        accent: ["#00F5D4", "#4CC9F0", "#FF4D8D"],
+        imageUrl: "https://placehold.co/1920x1080/4cc9f0/ffffff?text=Rainbow+Kingdom+Sky",
+        fallbackUrl: "https://placehold.co/1920x1080/4cc9f0/ffffff?text=Rainbow+Kingdom+Sky"
+      },
+      {
+        id: "wish-tree-glow",
+        title: {
+          vi: "Ánh Sáng Điều Ước Rực Rỡ",
+          en: "Radiant Wishes Glow",
+          ja: "きらめくウィッシュの光",
+          ko: "반짝이는 소원의 빛",
+          es: "Resplandor de los Deseos",
+          fr: "Éclat des Vœux Magiques"
+        },
+        category: "wishes",
+        resolution: "1920 × 1080 • HD",
+        accent: ["#FFBE0B", "#FF4D8D", "#B5179E"],
+        imageUrl: "https://placehold.co/1920x1080/ff4d8d/ffffff?text=Radiant+Wishes+Wallpaper",
+        fallbackUrl: "https://placehold.co/1920x1080/ff4d8d/ffffff?text=Radiant+Wishes+Wallpaper"
+      },
+      {
+        id: "pastel-mushroom-village",
+        title: {
+          vi: "Ngôi Làng Nấm Pastel Tươi Vui",
+          en: "Cheerful Pastel Mushroom Village",
+          ja: "陽気なパステルきのこ村",
+          ko: "명랑한 파스텔 버섯 마을",
+          es: "Aldea de Hongos Pastel",
+          fr: "Village Champignon Pastel"
+        },
+        category: "trueBartleby",
+        resolution: "1920 × 1080 • HD",
+        accent: ["#FF9EBB", "#00F5D4", "#FFD166"],
+        imageUrl: "https://placehold.co/1920x1080/f472b6/ffffff?text=Pastel+Mushroom+Kingdom",
+        fallbackUrl: "https://placehold.co/1920x1080/f472b6/ffffff?text=Pastel+Mushroom+Kingdom"
+      },
+      {
+        id: "prism-arch-horizon",
+        title: {
+          vi: "Cổng Lăng Kính Sắc Màu",
+          en: "Prism Arch Horizon",
+          ja: "プリズムアーチの水平線",
+          ko: "프리즘 아치 지평선",
+          es: "Horizonte Arco Prismático",
+          fr: "Horizon Arche Prismatique"
+        },
+        category: "rainbow",
+        resolution: "2560 × 1440 • 2K",
+        accent: ["#7209B7", "#4361EE", "#4CC9F0"],
+        imageUrl: "https://placehold.co/1920x1080/6366f1/ffffff?text=Prism+Arch+Rainbow",
+        fallbackUrl: "https://placehold.co/1920x1080/6366f1/ffffff?text=Prism+Arch+Rainbow"
+      },
+      {
+        id: "sunny-kingdom-breeze",
+        title: {
+          vi: "Gió Nắng Vương Quốc Vàng",
+          en: "Sunny Kingdom Breeze",
+          ja: "陽だまりの王国ブリーズ",
+          ko: "화창한 왕국의 산들바람",
+          es: "Brisa Soleada del Reino",
+          fr: "Brise Ensoleillée du Royaume"
+        },
+        category: "wishes",
+        resolution: "1920 × 1080 • HD",
+        accent: ["#FFBE0B", "#FB5607", "#00F5D4"],
+        imageUrl: "https://placehold.co/1920x1080/f59e0b/ffffff?text=Sunny+Kingdom+Breeze",
+        fallbackUrl: "https://placehold.co/1920x1080/f59e0b/ffffff?text=Sunny+Kingdom+Breeze"
+      }
+    ];
+
+    // App State
+    const state = {
+      lang: detectDeviceLanguage(),
+      category: "all",
+      search: "",
+      activeBgId: WALLPAPERS[0].id,
+      hueOffset: 0,
+      modalWallpaperId: null,
+      toastTimer: null
+    };
+
+    /**
+     * Detect user's device language via navigator.languages / navigator.language
+     */
+    function detectDeviceLanguage() {
+      const candidates = Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || "en"];
+
+      for (const raw of candidates) {
+        const code = String(raw).toLowerCase();
+        if (code.startsWith("vi")) return "vi";
+        if (code.startsWith("ja")) return "ja";
+        if (code.startsWith("ko")) return "ko";
+        if (code.startsWith("es")) return "es";
+        if (code.startsWith("fr")) return "fr";
+        if (code.startsWith("en")) return "en";
+      }
+      return "en";
+    }
+
+    function t() {
+      return TRANSLATIONS[state.lang] || TRANSLATIONS.en;
+    }
+
+    function showToast(message) {
+      const banner = document.getElementById("toast-banner");
+      const textEl = document.getElementById("toast-message");
+      textEl.textContent = message;
+
+      banner.classList.remove("translate-y-24", "opacity-0");
+      banner.classList.add("translate-y-0", "opacity-100");
+
+      clearTimeout(state.toastTimer);
+      state.toastTimer = setTimeout(() => {
+        banner.classList.remove("translate-y-0", "opacity-100");
+        banner.classList.add("translate-y-24", "opacity-0");
+      }, 2800);
+    }
+
+    /**
+     * Generates a rich artwork on a canvas if external image is unavailable or blocked by CORS
+     * so downloading always produces a crisp PNG file.
+     */
+    function createFallbackCanvasDataUrl(wallpaper) {
+      const canvas = document.createElement("canvas");
+      canvas.width = 1600;
+      canvas.height = 900;
+      const ctx = canvas.getContext("2d");
+
+      const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      grad.addColorStop(0, wallpaper.accent[0] || "#FF4D8D");
+      grad.addColorStop(0.5, wallpaper.accent[1] || "#4CC9F0");
+      grad.addColorStop(1, wallpaper.accent[2] || "#FFBE0B");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Rainbow arcs
+      const colors = ["#FF4D8D", "#FF9E00", "#FFBE0B", "#00F5D4", "#4CC9F0", "#9B5DE5"];
+      colors.forEach((col, idx) => {
+        ctx.beginPath();
+        ctx.arc(canvas.width * 0.5, canvas.height * 0.95, 520 - idx * 28, Math.PI, 0);
+        ctx.lineWidth = 24;
+        ctx.strokeStyle = col;
+        ctx.globalAlpha = 0.55;
+        ctx.stroke();
+      });
+
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = "rgba(15, 23, 42, 0.45)";
+      ctx.fillRect(0, canvas.height - 170, canvas.width, 170);
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 46px 'Fredoka', sans-serif";
+      ctx.fillText(wallpaper.title[state.lang] || wallpaper.title.en, 64, canvas.height - 95);
+
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+      ctx.font = "600 24px 'Plus Jakarta Sans', sans-serif";
+      ctx.fillText(`True & Rainbow Kingdom • ${wallpaper.resolution}`, 64, canvas.height - 48);
+
+      return canvas.toDataURL("image/png");
+    }
+
+    const MEDIAFIRE_FOLDER_URL = "https://www.mediafire.com/folder/wdifhzdfpcc2e/True_and_rainbow_kingdom(lazy_change_the_name_file)";
+
+    /**
+     * Triggers a clean download for a wallpaper item.
+     */
+    async function downloadWallpaper(wallpaper, externalUrl = "") {
+      if (externalUrl) {
+        const win = window.open(externalUrl, "_blank", "noopener,noreferrer");
+        if (!win) {
+          triggerAnchorDownload(externalUrl, "True_and_rainbow_kingdom.zip");
+        }
+        const title = wallpaper.title[state.lang] || wallpaper.title.en;
+        showToast(`${t().toastDownloaded}${title}`);
+        return;
+      }
+
+      const title = wallpaper.title[state.lang] || wallpaper.title.en;
+      const safeName = `${wallpaper.id}-${state.lang}.png`;
+
+      try {
+        // Attempt direct fetch first (works for same-origin / local files)
+        const response = await fetch(wallpaper.imageUrl, { cache: "no-store" });
+        if (!response.ok) throw new Error("Network response not ok");
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        triggerAnchorDownload(url, safeName);
+        setTimeout(() => URL.revokeObjectURL(url), 4000);
+      } catch (_err) {
+        // Fallback: render onto canvas and export PNG
+        const dataUrl = createFallbackCanvasDataUrl(wallpaper);
+        triggerAnchorDownload(dataUrl, safeName);
+      }
+
+      showToast(`${t().toastDownloaded}${title}`);
+    }
+
+    function triggerAnchorDownload(href, filename) {
+      const link = document.createElement("a");
+      link.href = href;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    /**
+     * Sets a wallpaper as the dynamic background behind the entire website.
+     */
+    function setAsWebsiteBackground(wallpaper, notify = true) {
+      state.activeBgId = wallpaper.id;
+      const wrapper = document.getElementById("bg-image-wrapper");
+      const testImg = new Image();
+
+      testImg.onload = () => {
+        wrapper.style.backgroundImage = `url('${wallpaper.imageUrl}')`;
+      };
+      testImg.onerror = () => {
+        wrapper.style.backgroundImage = `url('${wallpaper.fallbackUrl}')`;
+      };
+      testImg.src = wallpaper.imageUrl;
+
+      if (notify) {
+        const title = wallpaper.title[state.lang] || wallpaper.title.en;
+        showToast(`${t().toastBgChanged}${title}`);
+      }
+    }
+
+    function applyLanguageUI() {
+      const dict = t();
+      document.documentElement.lang = state.lang;
+
+      document.getElementById("hero-pill").textContent = dict.heroPill;
+      document.getElementById("hero-title").textContent = dict.heroTitle;
+      document.getElementById("hero-desc").textContent = dict.heroDesc;
+      document.getElementById("hero-cta-text").textContent = dict.heroCta;
+      document.getElementById("modal-download-label").textContent = dict.downloadModal;
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        const isActive = btn.dataset.lang === state.lang;
+        btn.classList.toggle("bg-gradient-to-r", isActive);
+        btn.classList.toggle("from-pink-500", isActive);
+        btn.classList.toggle("to-cyan-400", isActive);
+        btn.classList.toggle("text-slate-950", isActive);
+        btn.classList.toggle("shadow-md", isActive);
+        btn.classList.toggle("text-white/80", !isActive);
+        btn.classList.toggle("hover:bg-white/10", !isActive);
+      });
+
+      if (state.modalWallpaperId) {
+        openModal(state.modalWallpaperId);
+      }
+    }
+
+    function openModal(wallpaperId) {
+      const wp = WALLPAPERS.find((item) => item.id === wallpaperId);
+      if (!wp) return;
+
+      state.modalWallpaperId = wp.id;
+      const modal = document.getElementById("preview-modal");
+      const img = document.getElementById("modal-image");
+
+      document.getElementById("modal-title").textContent = wp.title[state.lang] || wp.title.en;
+      document.getElementById("modal-meta").textContent = wp.resolution;
+      img.src = wp.imageUrl;
+      img.alt = wp.title[state.lang] || wp.title.en;
+      img.onerror = () => {
+        if (img.src !== wp.fallbackUrl) img.src = wp.fallbackUrl;
+      };
+
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeModal() {
+      state.modalWallpaperId = null;
+      const modal = document.getElementById("preview-modal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function setupDynamicMotion() {
+      // Dynamic orbs remain active for smooth color ambiance
+    }
+
+    function bindEvents() {
+      document.getElementById("hero-download-featured").addEventListener("click", () => {
+        downloadWallpaper(WALLPAPERS[0], MEDIAFIRE_FOLDER_URL);
+      });
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.lang = btn.dataset.lang;
+          applyLanguageUI();
+        });
+      });
+
+      document.getElementById("modal-close").addEventListener("click", closeModal);
+      document.getElementById("preview-modal").addEventListener("click", (e) => {
+        if (e.target.id === "preview-modal") closeModal();
+      });
+
+      document.getElementById("modal-download").addEventListener("click", () => {
+        const wp = WALLPAPERS.find((w) => w.id === state.modalWallpaperId);
+        if (wp) downloadWallpaper(wp);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      bindEvents();
+      setupDynamicMotion();
+      applyLanguageUI();
+    });
+  </script>
+</body>
+</html>
